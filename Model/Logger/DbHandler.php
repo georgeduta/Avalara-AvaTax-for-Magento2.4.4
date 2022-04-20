@@ -76,7 +76,7 @@ class DbHandler extends AbstractHandler
      * @param array $record
      * @return Boolean
      */
-    public function isHandling(array $record)
+    public function isHandling(array $record): bool
     {
         return $this->avaTaxConfig->isModuleEnabled() && $record['level'] >= $this->avaTaxConfig->getLogDbLevel();
     }
@@ -84,7 +84,7 @@ class DbHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
-    public function handle(array $record)
+    public function handle(array $record): bool
     {
         if (!$this->isHandling($record)) {
             return false;
