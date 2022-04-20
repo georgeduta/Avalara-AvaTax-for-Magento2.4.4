@@ -103,7 +103,7 @@ class AvaTaxClientWrapper extends \Avalara\AvaTaxClient
     /**
      * {@inheritDoc}
      */
-    protected function restCall($apiUrl, $verb, $guzzleParams)
+    protected function restCall($apiUrl, $verb, $guzzleParams, $apiversion='')
     {
         if (!\is_array($guzzleParams)) {
             $guzzleParams = [];
@@ -118,7 +118,7 @@ class AvaTaxClientWrapper extends \Avalara\AvaTaxClient
             $guzzleParams['timeout'] = 0;
         }
 
-        return parent::restCall($apiUrl, $verb, $guzzleParams);
+        return parent::restCall($apiUrl, $verb, $guzzleParams,$apiversion);
     }
 
     /**
